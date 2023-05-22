@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng Của Bạn - H_Tee Shop</title>
+    <link rel="icon" href="logoT.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="pro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .clear{
+            clear: both;
+        }
+        
+        .home{
+            padding: 0 100px;
+        }
+        
+        #header{
+            background-color:black;
+            height: 58px;
+            font-style: bold;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            z-index: 5;
+        }
+        
+        #nav li a{
+            padding: 0 24px; 
+            line-height: 58px;
+            text-decoration: none;
+            color:bisque;
+            position: relative;
+            display: block;
+        }
+        
+        #nav li:hover{
+            background-color:rgb(17, 129, 133);
+            transition: all .5s;
+        }
+        
+        
+        #nav >li{
+            display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+        }
+        
+        #nav li:hover .subnav{
+            display:block;
+        }
+        
+        .subnav{
+            box-shadow: 0 0 10px  rgba(0,0,.5);
+        }
+        
+        .subnav li{
+            list-style-type: none;
+            border-bottom: 1px solid gray;
+        }
+        
+        #nav .subnav {
+            display:none;
+            position: absolute;
+            background-color: black;
+        }
+        
+        .kc{
+            margin: 0 15px;
+        }
+        
+        .fll{
+            float: left;
+        }
+        
+        .flr{
+            float: right;
+            line-height: 58px;
+            font-size:  18px;
+            margin-right: 10px;
+        }
+        
+        .flr a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .back-giohang{
+            background-color: rgb(238, 232, 232);
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-cart{
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        h2{
+            font-size: 38px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: cornflowerblue;
+        }
+
+        .header-cart p{
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .khung-cart{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;  
+            margin-bottom: 30px; 
+        }
+
+        .sw-cart{
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            height: 150px;
+            border-bottom: 3px solid gray;
+        }
+
+        
+
+        .img-cart{
+            width: 120px;
+            height: 120px;
+        }
+
+        .sub-sw-cart{
+            margin-left: 70px;
+            display: flex;
+            
+        }
+
+        .title-cart{
+            margin-left: 15px;
+            padding-top: 18px;
+            line-height: 25px;
+        }
+
+        h4{
+            font-size: 25px;
+        }
+
+        .tt-cart{
+            margin: auto;
+            border:2px solid black;
+            width: 420px;
+            height: 380px;
+            background-color: paleturquoise;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 20px;
+        }
+
+        .chungtt{
+            margin: 20px;
+            padding-bottom: 20px;
+            font-size: 25px;
+            border-bottom: 2px solid black;
+        }
+
+        .tt-cart p{
+            font-size: 20px;
+            margin: 0 20px;
+        }
+
+        .tt-cart button:hover{
+            cursor: pointer;
+        }
+
+        .tt-cart button{
+            font-size: 20px;
+            margin-top: 30px;
+            margin-left: 9px;
+            width: 400px;
+            height: 50px;
+        }
+
+        .cb{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .cb a{
+            text-decoration: none;
+        }
+
+        .csmh{
+            font-size:20px;
+            margin-top: 70px;
+            padding-bottom: 170px;
+            margin-left: 50px;
+            line-height: 45px;
+        }
+
+        .ti-shopping-cart-full{
+            margin-right: 10px;
+        }
+
+        .footer{
+            background-color:thistle;
+        }
+
+        .main_ft >p{
+            text-align: center;
+            line-height: 30px;
+            padding-top: 60px;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+        
+
+        .sub_ft{
+            padding-bottom: 70px;
+            text-align: center;
+        }
+
+        .ic_ft{
+            margin: 0 17px;
+            font-size:30px;
+            border: 2px solid royalblue;
+            background-color: royalblue;
+            color: white;
+            border-radius:50%;
+            padding: 5px;
+            
+        }
+
+        .ti-yt-ft{
+            border: 2px solid rgb(211, 9, 9) !important;
+            background-color: rgb(211, 9, 9) !important;
+        }
+
+        .sub_ft > a {
+            text-decoration: none;
+        }
+
+        .sub_ft > p > a{
+            color:black;
+            text-decoration: none;
+        }
+
+
+        .sub_ft >p{
+            margin-top: 40px;
+        }
+
+        .sub_ft >p>a:hover{
+            opacity: .4;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .infor a{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            text-decoration: none;
+            margin-bottom: 300px;
+            margin-right: 12px;
+            display: none;
+        }
+
+        .infor >a >i{
+            font-size: 35px;
+            color: bisque;
+            border: 2px solid rgb(233, 9, 20);
+            background-color: rgb(233, 9, 20);
+            border-radius: 50%;
+        }
+
+
+        
+        
+        /* Phần tablet */
+
+@media only screen and (min-width:740px) and (max-width:1023px) {
+    .flr {
+        display: none !important;
+    }
+
+    .hotline {
+        display: none !important;
+    }
+
+    .home {
+        padding: 0 50px;
+    }
+
+    .kc{
+        margin: 0 8px;
+    }
+
+    .infor a{
+        display: block;
+        margin-right: 5px;
+    }
+}
+
+
+
+
+    /* Phần mobile */
+
+@media screen and (max-width:739px) {
+    .flr{
+        display: none !important;
+    }
+
+    .home {
+        padding: 0 15px;
+    }
+
+    .hotline {
+        display: none !important;
+    }
+
+    .kc{
+        margin: 0;
+    }
+
+    .more{
+        display: none !important;
+    }
+
+    .infor a{
+        display: block;
+        margin-right: 5px;
+        margin-bottom: 350px;
+    }
+
+    
+
+    
+}
+
+
+
+    </style>
+
+
+    <body>
+        <!-- Thanh MENU -->
+        <div id="header">
+            <div class="fll">
+            <ul id="nav">
+                <li class="home"><a href="./shopHTee_pro.html"><i class="fa fa-home"></i> Home</a></li>
+                <li class="kc"><a href="WeightVest.html">Weight Vests</a></li>
+                <li class="kc"><a href="pro.html">Shop</a>
+                    <ul class="subnav">
+                    <li><a href="ShopTankTop.html">Áo tank top</a></li>
+                    <li><a href="ShopParallettes.html">PARALLETTES</a></li>
+                    <li><a href="ShopBangQuanCoTay.html">Băng quấn cổ tay</a></li>
+                    <li><a href="ShopDayTroLuc.html">Dây Trợ Lực</a></li>
+                    <li><a href="ShopDayNhay.html">Dây nhảy</a></li>
+                    <li><a href="ShopDaiDeoTa.html">Đai đeo tạ</a></li>
+        
+                    </ul>
+                </li>
+        
+                <li class="kc hotline"><a href="">Hotline</a>
+                    <ul class="subnav">
+                        <li><a href="">099 679 6879</a></li>
+                        <li><a href="">090 123 6789</a></li>
+                    </ul>
+                </li>
+        
+                <li class="kc more"><a href="">More <i class="ti-angle-down"></i></a>
+                    <ul class="subnav">
+                    <li><a href="https://fitcenter.vn/gym-la-gi/" target="_blank">Gym</a></li>
+                    <li><a href="https://open.spotify.com/album/7LxBrkZXrZZTLHRiDEJfqx" target="_blank">Music</a></li>
+                    <li><a href="https://chrisheria.com/blogs/news" target="_blank">Vlog of Heria</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+            </div>
+        
+            <div class="flr">
+                <a href="LogIn.html">Register | Log In</a>
+            </div>
+        
+            <div class="clear"></div>
+        </div>
+        
+
+
+        <div class="back-giohang">
+
+            <div class="header-cart">
+                <h2>Giỏ Hàng Của Bạn</h2> 
+                <p>Có 3 sản phẩm trong giỏ hàng</p>
+            </div>
+
+            <div class="khung-cart">
+
+                <div class="sw-cart">
+
+                    <div class="sub-sw-cart">
+                        <img src="wv10.jpg" alt="" class="img-cart">
+                        
+                        <div class="title-cart">
+                            <h4>28LB Weight Vest Orange</h4>
+                            3.550.000₫  <br/>
+                            Số lượng: 2 <br/>
+                            7.100.000₫ 
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="sw-cart">
+
+                    <div class="sub-sw-cart">
+                        <img src="para.jpg" alt="" class="img-cart">
+                        
+                        <div class="title-cart">
+                            <h4>Parallettes</h4>
+                            200.000₫  <br/>
+                            Số lượng: 1 <br/>
+                            200.000₫ 
+                        </div>
+                    </div>
+                </div>
+                
+
+            
+
+
+            </div>
+
+                <div class="tt-cart">
+
+                    <div class="infor chungtt">
+                        Thông Tin Đơn Hàng
+                    </div>
+
+                    <div class="ttien chungtt">
+                        Tổng Tiền: 7.300.000₫
+                    </div>
+
+                    <p>Phí vận chuyển sẽ được tính ở trang thanh toán.
+                    Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
+
+                    <button>THANH TOÁN</button>
+                    
+                    <div class="cb">
+                        <a href="WeightVest.html">
+                            <i class="ti-back-left"></i>
+                            ↩ Tiếp tục mua hàng
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="csmh">
+                    <h2>Chính sách mua hàng</h2>
+                    <p>
+                        ▶  Sản phẩm được đổi 1 lần duy nhất, không hỗ trợ trả. <br/>
+                        ▶  Sản phẩm còn đủ tem mác, chưa qua sử dụng. <br/>
+                        ▶  Sản phẩm nguyên giá được đổi trong 30 ngày trên toàn hệ thống. <br/>
+                        ▶  Sản phẩm sale chỉ hỗ trợ đổi size (nếu cửa hàng còn) trong 7 ngày trên toàn hệ thống.
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="footer">
+
+            <div class="main_ft">
+                <p>
+                    Vui lòng không copy dưới mọi hình thức<br/>
+                    Email: streetworkout_cayACB@gmail.com | Phone number: 090 113 6789 <br/>
+                    Street Workout Cây_ACB &nbsp; &nbsp; Copyright © 2023
+                </p>
+    
+    
+            </div>
+    
+    
+            <div class="sub_ft">
+                
+    
+                <p>
+                    © 2023, <a href="https://www.facebook.com/profile.php?id=100012833327149" target="_blank">Ng Huu Tri</a>
+                </p>
+            </div>
+                
+        </div>
+
+
+
+
+
+
+
+        <div class="infor">
+            <a href="LogIn.html"><i class="ti-info"></i></a>
+        </div>
+
+    </body>
